@@ -23,6 +23,7 @@ function pickLocation() {
 //make the snake mooving and refresh with update and show function
 function draw() {
   background(51);
+  s.death();
   s.update();
   s.show();
 
