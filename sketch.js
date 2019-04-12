@@ -1,13 +1,23 @@
 //create our snake object
 var s;
-// fix unit o
+// fix unit 
 var scl = 20;
+
+var food;
 
 //create the scene (context), refresh the scene
 function setup() {
   createCanvas(600, 600);
   s = new Snake();
   frameRate(10);
+  pickLocation();
+}
+
+function pickLocation() {
+  var cols = floor(width / scl);
+  var rows = floor(height / scl);
+  food = createVector(floor(random(cols)), floor(random(rows)));
+  food.mult(scl);
 }
 
 //make the snake mooving and refresh with update and show function
@@ -15,6 +25,13 @@ function draw() {
   background(51);
   s.update();
   s.show();
+
+  if (s.eat(food)) {
+    pickLocation();
+  }
+
+  fill(255, 0, 100);
+  rect(food.x, food.y, scl, scl)
 }
 
 //snake's movement controlled by arrows
