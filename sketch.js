@@ -3,10 +3,11 @@ var s;
 // fix unit o
 var scl = 20;
 
-//create the scene (context)
+//create the scene (context), refresh the scene
 function setup() {
   createCanvas(600, 600);
   s = new Snake();
+  frameRate(10);
 }
 
 //make the snake mooving and refresh with update and show function
@@ -16,7 +17,7 @@ function draw() {
   s.show();
 }
 
-//snake's movement link by arrows
+//snake's movement controlled by arrows
 function keyPressed() {
   if (keyCode === UP_ARROW) {
     s.dir(0, -1);
