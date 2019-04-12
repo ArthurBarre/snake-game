@@ -24,7 +24,7 @@ function Snake() {
   }
   //snake params
   this.show = function () {
-    fill(66, 105, 225);
+    fill(100, 105, 225);
     stroke(255);
     rect(this.x, this.y, scl, scl)
   }
